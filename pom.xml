@@ -8,16 +8,24 @@
     <packaging>pom</packaging>
     <name>mtchat</name>
     <description>mtchat</description>
+
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
         <version>2.6.13</version>
     </parent>
+
     <modules>
         <module>mtchat-common</module>
         <module>mtchat-server</module>
         <module>mtchat-transaction</module>
+        <module>user-service</module>
+        <module>login-service</module>
+        <module>websocket-service</module>
+        <module>chat-service</module>
+        <module>room-service</module>
     </modules>
+
     <properties>
         <start-class>com.mtlaa.mtchat.MtChatApplication</start-class>
         <java.version>1.8</java.version>
@@ -29,6 +37,8 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
         <docker.host>http://192.168.3.101:2375</docker.host>
+        <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
         <hutool.version>5.8.18</hutool.version>
         <springfox-swagger.version>3.0.0</springfox-swagger.version>
         <swagger-models.version>1.6.0</swagger-models.version>
@@ -52,6 +62,22 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--     spring cloud       -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--     spring cloud alibaba      -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2021.0.4.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
