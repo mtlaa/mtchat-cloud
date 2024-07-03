@@ -44,7 +44,8 @@ public class SecureInvokeService {
     /**
      * Spring的定时任务，每5秒自动执行一次
      */
-    @Scheduled(cron = "*/5 * * * * ?")
+//    @Scheduled(cron = "*/5 * * * * ?")
+    @Scheduled(cron = "1 * * * * ?")
     public void retry() {
         log.info("本地消息表，自动执行确保最终一致性...");
         // 查询出需要重试的记录
@@ -130,7 +131,7 @@ public class SecureInvokeService {
      */
     public void doAsyncInvoke(SecureInvokeRecord record) {
         executor.execute(() -> {
-            System.out.println(Thread.currentThread().getName());
+//            System.out.println(Thread.currentThread().getName());
             doInvoke(record);
         });
     }
