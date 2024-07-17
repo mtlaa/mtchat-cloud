@@ -1,11 +1,12 @@
 package com.mtlaa.user.controller;
 
 
-import com.mtlaa.mtchat.domain.common.vo.request.IdReqVO;
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
-import com.mtlaa.mtchat.domain.common.vo.response.IdRespVO;
-import com.mtlaa.mtchat.domain.user.vo.request.UserEmojiReq;
-import com.mtlaa.mtchat.domain.user.vo.response.UserEmojiResp;
+
+import com.mtlaa.api.domain.common.vo.request.IdReqVO;
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.common.vo.response.IdRespVO;
+import com.mtlaa.api.domain.user.vo.request.UserEmojiReq;
+import com.mtlaa.api.domain.user.vo.response.UserEmojiResp;
 import com.mtlaa.mtchat.utils.RequestHolder;
 import com.mtlaa.user.service.UserEmojiService;
 import io.swagger.annotations.ApiOperation;

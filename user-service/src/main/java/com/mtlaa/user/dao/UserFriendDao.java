@@ -1,9 +1,10 @@
 package com.mtlaa.user.dao;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mtlaa.mtchat.domain.common.vo.request.CursorPageBaseReq;
-import com.mtlaa.mtchat.domain.common.vo.response.CursorPageBaseResp;
-import com.mtlaa.mtchat.domain.user.entity.UserFriend;
+
+import com.mtlaa.api.domain.common.vo.request.CursorPageBaseReq;
+import com.mtlaa.api.domain.common.vo.response.CursorPageBaseResp;
+import com.mtlaa.api.domain.user.entity.UserFriend;
 import com.mtlaa.mtchat.utils.cursor.CursorUtils;
 import com.mtlaa.user.mapper.UserFriendMapper;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,6 @@ public class UserFriendDao extends ServiceImpl<UserFriendMapper, UserFriend> {
 //        return new CursorPageBaseResp<UserFriend>(cursor,
 //                userFriends.getRecords().size() != cursorPageBaseReq.getPageSize(),
 //                userFriends.getRecords());
-
         return CursorUtils.getCursorPageByMysql(this, cursorPageBaseReq,
                 wrapper -> wrapper.eq(UserFriend::getUid, uid), UserFriend::getId);
     }

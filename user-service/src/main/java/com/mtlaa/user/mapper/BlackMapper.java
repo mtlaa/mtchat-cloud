@@ -1,7 +1,7 @@
 package com.mtlaa.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mtlaa.mtchat.domain.user.entity.Black;
+import com.mtlaa.api.domain.user.entity.Black;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

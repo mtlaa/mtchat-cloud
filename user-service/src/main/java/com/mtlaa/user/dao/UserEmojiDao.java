@@ -1,8 +1,9 @@
 package com.mtlaa.user.dao;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mtlaa.mtchat.domain.common.enums.NormalOrNoEnum;
-import com.mtlaa.mtchat.domain.user.entity.UserEmoji;
+
+import com.mtlaa.api.domain.common.enums.NormalOrNoEnum;
+import com.mtlaa.api.domain.user.entity.UserEmoji;
 import com.mtlaa.user.mapper.UserEmojiMapper;
 import org.springframework.stereotype.Service;
 

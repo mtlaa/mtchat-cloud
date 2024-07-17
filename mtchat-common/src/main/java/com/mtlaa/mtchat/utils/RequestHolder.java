@@ -1,7 +1,7 @@
 package com.mtlaa.mtchat.utils;
 
 
-import com.mtlaa.mtchat.domain.common.entity.RequestInfo;
+import com.mtlaa.api.domain.common.entity.RequestInfo;
 
 /**
  * Create 2023/12/11 17:25

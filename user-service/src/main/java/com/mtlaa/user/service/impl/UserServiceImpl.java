@@ -1,22 +1,20 @@
 package com.mtlaa.user.service.impl;
 
 
-
-import com.mtlaa.mtchat.domain.user.dto.ItemInfoDTO;
-import com.mtlaa.mtchat.domain.user.dto.SummeryInfoDTO;
-import com.mtlaa.mtchat.domain.user.entity.Black;
-import com.mtlaa.mtchat.domain.user.entity.ItemConfig;
-import com.mtlaa.mtchat.domain.user.entity.User;
-import com.mtlaa.mtchat.domain.user.entity.UserBackpack;
-import com.mtlaa.mtchat.domain.user.enums.BlackTypeEnum;
-import com.mtlaa.mtchat.domain.user.enums.ItemEnum;
-import com.mtlaa.mtchat.domain.user.enums.ItemTypeEnum;
-import com.mtlaa.mtchat.domain.user.vo.request.ItemInfoReq;
-import com.mtlaa.mtchat.domain.user.vo.request.ModifyNameRequest;
-import com.mtlaa.mtchat.domain.user.vo.request.SummeryInfoReq;
-import com.mtlaa.mtchat.domain.user.vo.response.BadgeResponse;
-import com.mtlaa.mtchat.domain.user.vo.response.UserInfoResponse;
-
+import com.mtlaa.api.domain.user.dto.ItemInfoDTO;
+import com.mtlaa.api.domain.user.dto.SummeryInfoDTO;
+import com.mtlaa.api.domain.user.entity.Black;
+import com.mtlaa.api.domain.user.entity.ItemConfig;
+import com.mtlaa.api.domain.user.entity.User;
+import com.mtlaa.api.domain.user.entity.UserBackpack;
+import com.mtlaa.api.domain.user.enums.BlackTypeEnum;
+import com.mtlaa.api.domain.user.enums.ItemEnum;
+import com.mtlaa.api.domain.user.enums.ItemTypeEnum;
+import com.mtlaa.api.domain.user.vo.request.ItemInfoReq;
+import com.mtlaa.api.domain.user.vo.request.ModifyNameRequest;
+import com.mtlaa.api.domain.user.vo.request.SummeryInfoReq;
+import com.mtlaa.api.domain.user.vo.response.BadgeResponse;
+import com.mtlaa.api.domain.user.vo.response.UserInfoResponse;
 import com.mtlaa.mtchat.exception.BusinessException;
 
 import com.mtlaa.mtchat.utils.sensitive.SensitiveWordFilter;
@@ -28,6 +26,8 @@ import com.mtlaa.user.dao.BlackDao;
 import com.mtlaa.user.dao.ItemConfigDao;
 import com.mtlaa.user.dao.UserBackpackDao;
 import com.mtlaa.user.dao.UserDao;
+import com.mtlaa.user.event.UserBlackEvent;
+import com.mtlaa.user.event.UserRegisterEvent;
 import com.mtlaa.user.service.UserService;
 import com.mtlaa.user.service.adapter.UserAdapter;
 import org.apache.commons.lang3.StringUtils;

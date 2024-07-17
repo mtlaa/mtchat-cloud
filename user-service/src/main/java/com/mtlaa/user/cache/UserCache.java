@@ -1,8 +1,8 @@
 package com.mtlaa.user.cache;
 
 
+import com.mtlaa.api.domain.user.entity.UserRole;
 import com.mtlaa.mtchat.constant.RedisKey;
-import com.mtlaa.mtchat.domain.user.entity.UserRole;
 
 import com.mtlaa.mtchat.utils.redis.RedisUtils;
 import com.mtlaa.user.dao.BlackDao;

@@ -1,8 +1,8 @@
 package com.mtlaa.mtchat.config;
 
 import com.mtlaa.mtchat.exception.BusinessException;
-import com.mtlaa.mtchat.sensitive.dao.SensitiveWordDao;
-import com.mtlaa.mtchat.sensitive.domain.SensitiveWord;
+import com.mtlaa.mtchat.utils.sensitive.dao.SensitiveWordDao;
+import com.mtlaa.mtchat.utils.sensitive.domain.SensitiveWord;
 import com.mtlaa.mtchat.utils.sensitive.SensitiveWordFilter;
 import com.mtlaa.mtchat.utils.sensitive.SensitiveWordProperties;
 import com.mtlaa.mtchat.utils.sensitive.impl.ACFilter;

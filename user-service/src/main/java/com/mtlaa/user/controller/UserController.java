@@ -2,14 +2,15 @@ package com.mtlaa.user.controller;
 
 
 
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
-import com.mtlaa.mtchat.domain.user.dto.ItemInfoDTO;
-import com.mtlaa.mtchat.domain.user.dto.SummeryInfoDTO;
-import com.mtlaa.mtchat.domain.user.enums.IdempotentEnum;
-import com.mtlaa.mtchat.domain.user.enums.RoleEnum;
-import com.mtlaa.mtchat.domain.user.vo.request.*;
-import com.mtlaa.mtchat.domain.user.vo.response.BadgeResponse;
-import com.mtlaa.mtchat.domain.user.vo.response.UserInfoResponse;
+
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.user.dto.ItemInfoDTO;
+import com.mtlaa.api.domain.user.dto.SummeryInfoDTO;
+import com.mtlaa.api.domain.user.enums.IdempotentEnum;
+import com.mtlaa.api.domain.user.enums.RoleEnum;
+import com.mtlaa.api.domain.user.vo.request.*;
+import com.mtlaa.api.domain.user.vo.response.BadgeResponse;
+import com.mtlaa.api.domain.user.vo.response.UserInfoResponse;
 import com.mtlaa.mtchat.exception.BusinessException;
 
 import com.mtlaa.mtchat.utils.RequestHolder;

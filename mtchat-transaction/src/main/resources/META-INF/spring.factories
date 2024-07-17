@@ -1,3 +1,4 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.mtlaa.mychat.transaction.config.TransactionAutoConfiguration
+  com.mtlaa.mychat.transaction.config.TransactionAutoConfiguration,\
+  com.mtlaa.mychat.transaction.service.PushService

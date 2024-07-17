@@ -1,9 +1,10 @@
 package com.mtlaa.user.service.adapter;
 
-import com.mtlaa.mtchat.domain.user.entity.ItemConfig;
-import com.mtlaa.mtchat.domain.user.entity.User;
-import com.mtlaa.mtchat.domain.user.entity.UserBackpack;
-import com.mtlaa.mtchat.domain.user.vo.response.BadgeResponse;
+
+import com.mtlaa.api.domain.user.entity.ItemConfig;
+import com.mtlaa.api.domain.user.entity.User;
+import com.mtlaa.api.domain.user.entity.UserBackpack;
+import com.mtlaa.api.domain.user.vo.response.BadgeResponse;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Comparator;

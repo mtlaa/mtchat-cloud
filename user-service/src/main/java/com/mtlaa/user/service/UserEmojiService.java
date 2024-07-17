@@ -2,8 +2,10 @@ package com.mtlaa.user.service;
 
 
 
-import com.mtlaa.mtchat.domain.user.vo.request.UserEmojiReq;
-import com.mtlaa.mtchat.domain.user.vo.response.UserEmojiResp;
+
+
+import com.mtlaa.api.domain.user.vo.request.UserEmojiReq;
+import com.mtlaa.api.domain.user.vo.response.UserEmojiResp;
 
 import java.util.List;
 

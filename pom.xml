@@ -24,6 +24,7 @@
         <module>websocket-service</module>
         <module>chat-service</module>
         <module>room-service</module>
+        <module>mtchat-api</module>
     </modules>
 
     <properties>

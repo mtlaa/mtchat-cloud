@@ -2,11 +2,13 @@ package com.mtlaa.user.service.adapter;
 
 
 
-import com.mtlaa.mtchat.domain.user.entity.User;
-import com.mtlaa.mtchat.domain.user.entity.UserApply;
-import com.mtlaa.mtchat.domain.user.entity.UserFriend;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendApplyResp;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendResp;
+
+
+import com.mtlaa.api.domain.user.entity.User;
+import com.mtlaa.api.domain.user.entity.UserApply;
+import com.mtlaa.api.domain.user.entity.UserFriend;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendApplyResp;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendResp;
 
 import java.util.List;
 import java.util.Map;

@@ -4,8 +4,8 @@ import cn.hutool.core.util.StrUtil;
 import com.mtlaa.login.service.LoginService;
 import com.mtlaa.mtchat.constant.RedisKey;
 
-import com.mtlaa.mtchat.utils.jwt.JwtProperties;
-import com.mtlaa.mtchat.utils.jwt.JwtUtil;
+import com.mtlaa.login.util.jwt.JwtProperties;
+import com.mtlaa.login.util.jwt.JwtUtil;
 import com.mtlaa.mtchat.utils.redis.RedisUtils;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;

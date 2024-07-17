@@ -1,9 +1,10 @@
 package com.mtlaa.user.service.impl;
 
 
+import com.mtlaa.api.domain.user.entity.UserBackpack;
+import com.mtlaa.api.domain.user.enums.IdempotentEnum;
 import com.mtlaa.mtchat.annotation.RedissonLock;
-import com.mtlaa.mtchat.domain.user.entity.UserBackpack;
-import com.mtlaa.mtchat.domain.user.enums.IdempotentEnum;
+
 
 import com.mtlaa.user.dao.UserBackpackDao;
 import com.mtlaa.user.service.UserBackpackService;

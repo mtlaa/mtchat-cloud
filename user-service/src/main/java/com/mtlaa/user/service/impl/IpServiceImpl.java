@@ -3,10 +3,11 @@ package com.mtlaa.user.service.impl;
 import cn.hutool.core.thread.NamedThreadFactory;
 import cn.hutool.http.HttpUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
-import com.mtlaa.mtchat.domain.user.entity.IpDetail;
-import com.mtlaa.mtchat.domain.user.entity.IpInfo;
-import com.mtlaa.mtchat.domain.user.entity.User;
+
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.user.entity.IpDetail;
+import com.mtlaa.api.domain.user.entity.IpInfo;
+import com.mtlaa.api.domain.user.entity.User;
 import com.mtlaa.mtchat.utils.redis.JsonUtils;
 import com.mtlaa.user.cache.UserCache;
 import com.mtlaa.user.dao.UserDao;

@@ -1,7 +1,7 @@
 package com.mtlaa.login.controller;
 
 
-import com.mtlaa.user.service.WxMsgService;
+import com.mtlaa.login.service.WxMsgService;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

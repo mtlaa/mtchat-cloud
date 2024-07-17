@@ -1,6 +1,6 @@
 package com.mtlaa.user.service;
 
-import com.mtlaa.mtchat.domain.user.enums.IdempotentEnum;
+import com.mtlaa.api.domain.user.enums.IdempotentEnum;
 import org.springframework.stereotype.Service;
 
 /**

@@ -2,7 +2,7 @@ package com.mtlaa.user.dao;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mtlaa.mtchat.domain.user.entity.User;
+import com.mtlaa.api.domain.user.entity.User;
 import com.mtlaa.user.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 

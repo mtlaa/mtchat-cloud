@@ -1,9 +1,10 @@
 package com.mtlaa.mychat.transaction.service;
 
 
+import com.mtlaa.api.domain.chat.dto.PushMessageDTO;
+import com.mtlaa.api.domain.chat.vo.response.wsMsg.WSBaseResp;
 import com.mtlaa.mtchat.constant.MQConstant;
-import com.mtlaa.mtchat.domain.chat.dto.PushMessageDTO;
-import com.mtlaa.mtchat.domain.chat.vo.response.wsMsg.WSBaseResp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

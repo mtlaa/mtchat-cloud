@@ -1,7 +1,7 @@
 package com.mtlaa.user.cache;
 
 
-import com.mtlaa.mtchat.domain.user.entity.ItemConfig;
+import com.mtlaa.api.domain.user.entity.ItemConfig;
 import com.mtlaa.user.dao.ItemConfigDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;

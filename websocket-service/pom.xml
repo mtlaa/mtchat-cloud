@@ -18,6 +18,13 @@
     </properties>
 
     <dependencies>
+        <!--    项目api和实体类    -->
+        <dependency>
+            <groupId>com.mtlaa</groupId>
+            <artifactId>mtchat-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!--    common    -->
         <dependency>
             <groupId>com.mtlaa</groupId>

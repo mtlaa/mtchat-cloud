@@ -1,8 +1,9 @@
 package com.mtlaa.websocket.service;
 
 
-import com.mtlaa.mtchat.domain.chat.vo.response.wsMsg.WSBaseResp;
-import com.mtlaa.mtchat.domain.user.entity.User;
+
+import com.mtlaa.api.domain.chat.vo.response.wsMsg.WSBaseResp;
+import com.mtlaa.api.domain.user.entity.User;
 import io.netty.channel.Channel;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public interface WebSocketService {
 
     void disconnect(Channel channel);
 
-    void loginSuccess(Integer code, User user);
+    void loginSuccess(Integer code, User user, String token);
 
     void sendWaitAuthorizeMsg(Integer code);
 

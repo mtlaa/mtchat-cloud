@@ -1,6 +1,11 @@
 server:
   port: 8081
 
+# 开启okhttp连接池
+feign:
+  okhttp:
+    enabled: true
+
 spring:
   application:
     name: user-service

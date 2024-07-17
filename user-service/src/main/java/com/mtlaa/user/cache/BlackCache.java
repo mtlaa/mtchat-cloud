@@ -2,10 +2,11 @@ package com.mtlaa.user.cache;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
+import com.mtlaa.api.domain.user.entity.Black;
+import com.mtlaa.api.domain.user.enums.BlackTypeEnum;
 import com.mtlaa.mtchat.annotation.RedissonLock;
 import com.mtlaa.mtchat.constant.RedisKey;
-import com.mtlaa.mtchat.domain.user.entity.Black;
-import com.mtlaa.mtchat.domain.user.enums.BlackTypeEnum;
+
 import com.mtlaa.mtchat.utils.redis.RedisUtils;
 import com.mtlaa.user.dao.BlackDao;
 import org.springframework.beans.factory.annotation.Autowired;

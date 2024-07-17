@@ -1,10 +1,11 @@
 package com.mtlaa.user.service.impl;
 
 
+import com.mtlaa.api.domain.user.entity.UserEmoji;
+import com.mtlaa.api.domain.user.vo.request.UserEmojiReq;
+import com.mtlaa.api.domain.user.vo.response.UserEmojiResp;
 import com.mtlaa.mtchat.annotation.RedissonLock;
-import com.mtlaa.mtchat.domain.user.entity.UserEmoji;
-import com.mtlaa.mtchat.domain.user.vo.request.UserEmojiReq;
-import com.mtlaa.mtchat.domain.user.vo.response.UserEmojiResp;
+
 import com.mtlaa.mtchat.exception.BusinessException;
 
 import com.mtlaa.user.dao.UserEmojiDao;

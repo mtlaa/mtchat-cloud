@@ -3,10 +3,11 @@ package com.mtlaa.user.dao;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mtlaa.mtchat.domain.user.entity.UserApply;
-import com.mtlaa.mtchat.domain.user.enums.ApplyReadStatusEnum;
-import com.mtlaa.mtchat.domain.user.enums.ApplyStatusEnum;
-import com.mtlaa.mtchat.domain.user.enums.ApplyTypeEnum;
+
+import com.mtlaa.api.domain.user.entity.UserApply;
+import com.mtlaa.api.domain.user.enums.ApplyReadStatusEnum;
+import com.mtlaa.api.domain.user.enums.ApplyStatusEnum;
+import com.mtlaa.api.domain.user.enums.ApplyTypeEnum;
 import com.mtlaa.user.mapper.UserApplyMapper;
 import org.springframework.stereotype.Service;
 

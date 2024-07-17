@@ -18,11 +18,12 @@
     </properties>
 
     <dependencies>
-        <!--    jwt    -->
+        <!--    项目api和实体类    -->
         <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
+            <groupId>com.mtlaa</groupId>
+            <artifactId>mtchat-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <!--    redis    -->
         <dependency>

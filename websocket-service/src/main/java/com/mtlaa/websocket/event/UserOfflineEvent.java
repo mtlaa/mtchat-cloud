@@ -1,6 +1,6 @@
 package com.mtlaa.websocket.event;
 
-import com.mtlaa.mtchat.domain.user.entity.User;
+import com.mtlaa.api.domain.user.entity.User;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

@@ -5,23 +5,25 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.mtlaa.mtchat.domain.chat.vo.response.wsMsg.WSBaseResp;
-import com.mtlaa.mtchat.domain.user.entity.User;
-import com.mtlaa.mtchat.domain.user.enums.RoleEnum;
-import com.mtlaa.mtchat.domain.websocket.dto.WebSocketConnectInfo;
-import com.mtlaa.mtchat.domain.websocket.enums.WebSocketResponseTypeEnum;
 
+
+import com.mtlaa.api.client.LoginClient;
+import com.mtlaa.api.client.UserClient;
+import com.mtlaa.api.domain.chat.vo.response.wsMsg.WSBaseResp;
+import com.mtlaa.api.domain.user.entity.User;
+import com.mtlaa.api.domain.user.enums.RoleEnum;
+import com.mtlaa.api.domain.websocket.dto.WebSocketConnectInfo;
+import com.mtlaa.api.domain.websocket.enums.WebSocketResponseTypeEnum;
 import com.mtlaa.websocket.config.ThreadPoolConfig;
 import com.mtlaa.websocket.event.UserOfflineEvent;
 import com.mtlaa.websocket.event.UserOnlineEvent;
 import com.mtlaa.websocket.service.WebSocketService;
-import com.mtlaa.websocket.service.adapter.WebSocketAdapter;
+import com.mtlaa.mtchat.adapter.WebSocketAdapter;
 import com.mtlaa.websocket.utils.NettyUtil;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
-import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpQrCodeTicket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -64,16 +66,14 @@ public class WebSocketServiceImpl implements WebSocketService {
             .build();
 
 
-//    @Autowired
-//    private WxMpService wxMpService;
-//    @Autowired
-//    private LoginService loginService;  TODO 登录服务提供登录和校验，以及获取登录二维码
-//    @Autowired
-//    private UserDao userDao;  TODO 用户服务提供根据id查询用户
+    @Autowired
+    private UserClient userClient;
+    @Autowired
+    private LoginClient loginClient;
+
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
-//    @Autowired
-//    private RoleService roleService;  TODO 用户服务提供查询用户权限（是否有某个权限）
+
     @Autowired
     @Qualifier(ThreadPoolConfig.WEBSOCKET_PUSH_EXECUTOR)
     private Executor executor;
@@ -114,14 +114,11 @@ public class WebSocketServiceImpl implements WebSocketService {
      * 重新扫码登录时的登录成功
      */
     @Override
-    public void loginSuccess(Integer code, User user) {
+    public void loginSuccess(Integer code, User user, String token) {
         log.info("登录成功：{}", user);
         Channel channel = WAIT_LOGIN_MAP.getIfPresent(code);
         if(channel==null) return;
         WAIT_LOGIN_MAP.invalidate(code);
-        // TODO 获取jwt
-//        String token = loginService.login(user.getId());
-        String token = "jwt";
         // 返回登录成功的消息
         commonLoginSuccess(channel, user, token);
     }
@@ -146,7 +143,7 @@ public class WebSocketServiceImpl implements WebSocketService {
     public void handleAuthorizeJwt(Channel channel, String token) {
         log.info("websocket握手成功,进行认证..., jwt:{}", token);
         // TODO 测试环境免扫码
-//        Long userId = loginService.getValidUid(token);  TODO 用户服务 提供 验证jwt
+        // Long userId = loginClient.getValidUid(token);
         Long userId = null;
         if(userId == null){
             // 返回消息，需要重新登录
@@ -155,8 +152,7 @@ public class WebSocketServiceImpl implements WebSocketService {
         }else{
             // 校验通过
             log.info("解析jwt成功");
-//            User user = userDao.getById(userId);  TODO 用户服务 提供 查询用户
-            User user = new User();
+            User user = userClient.getByUid(userId);
             // 使用JWT校验的登录成功
             commonLoginSuccess(channel, user, token);
         }
@@ -202,9 +198,8 @@ public class WebSocketServiceImpl implements WebSocketService {
         ONLINE_UID_MAP.get(user.getId()).add(channel);
 
         // 推送消息
-//        sendMsg(channel, WebSocketAdapter.build(user, token,
-//                roleService.hasPower(user.getId(), RoleEnum.CHAT_MANAGER))); TODO 用户服务 提供 查询角色
-        sendMsg(channel, WebSocketAdapter.build(user, token, true));
+        sendMsg(channel, WebSocketAdapter.build(user, token,
+                userClient.hasPower(user.getId(), RoleEnum.CHAT_MANAGER.getId())));
         // 用户上线事件,发送事件  填充user中字段，如IP信息
         user.setLastOptTime(LocalDateTime.now());
         user.refreshIp(NettyUtil.getAttr(channel, NettyUtil.IP));  // 刷新IP信息
@@ -220,10 +215,7 @@ public class WebSocketServiceImpl implements WebSocketService {
         Integer code = generateLoginCode(channel);
         log.info("请求登录二维码，code:{} 当前待登录的连接{}个：{}", code, WAIT_LOGIN_MAP.estimatedSize(), WAIT_LOGIN_MAP.asMap());
         // 用该code申请微信的带参二维码
-//        WxMpQrCodeTicket wxMpQrCodeTicket = wxMpService.getQrcodeService()
-//                .qrCodeCreateTmpTicket(code, (int) DURATION.getSeconds());  TODO 登录服务 提供 获取登录二维码
-        WxMpQrCodeTicket wxMpQrCodeTicket = new WxMpQrCodeTicket();
-        wxMpQrCodeTicket.setUrl("http://110.41.49.248");
+        WxMpQrCodeTicket wxMpQrCodeTicket = loginClient.getQrCode(code, (int) DURATION.getSeconds());
         // 返回二维码给前端
         sendMsg(channel, WebSocketAdapter.build(wxMpQrCodeTicket));
     }

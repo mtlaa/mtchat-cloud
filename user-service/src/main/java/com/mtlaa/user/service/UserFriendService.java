@@ -1,17 +1,17 @@
 package com.mtlaa.user.service;
 
 
-import com.mtlaa.mtchat.domain.common.vo.request.CursorPageBaseReq;
-import com.mtlaa.mtchat.domain.common.vo.request.PageBaseReq;
-import com.mtlaa.mtchat.domain.common.vo.response.CursorPageBaseResp;
-import com.mtlaa.mtchat.domain.common.vo.response.PageBaseResp;
-import com.mtlaa.mtchat.domain.user.vo.request.friend.FriendApplyReq;
-import com.mtlaa.mtchat.domain.user.vo.request.friend.FriendApproveReq;
-import com.mtlaa.mtchat.domain.user.vo.request.friend.FriendCheckReq;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendApplyResp;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendCheckResp;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendResp;
-import com.mtlaa.mtchat.domain.user.vo.response.friend.FriendUnreadResp;
+import com.mtlaa.api.domain.common.vo.request.CursorPageBaseReq;
+import com.mtlaa.api.domain.common.vo.request.PageBaseReq;
+import com.mtlaa.api.domain.common.vo.response.CursorPageBaseResp;
+import com.mtlaa.api.domain.common.vo.response.PageBaseResp;
+import com.mtlaa.api.domain.user.vo.request.friend.FriendApplyReq;
+import com.mtlaa.api.domain.user.vo.request.friend.FriendApproveReq;
+import com.mtlaa.api.domain.user.vo.request.friend.FriendCheckReq;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendApplyResp;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendCheckResp;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendResp;
+import com.mtlaa.api.domain.user.vo.response.friend.FriendUnreadResp;
 
 /**
  * <p>

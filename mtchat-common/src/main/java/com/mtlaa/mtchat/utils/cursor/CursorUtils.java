@@ -8,8 +8,9 @@ import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-import com.mtlaa.mtchat.domain.common.vo.request.CursorPageBaseReq;
-import com.mtlaa.mtchat.domain.common.vo.response.CursorPageBaseResp;
+
+import com.mtlaa.api.domain.common.vo.request.CursorPageBaseReq;
+import com.mtlaa.api.domain.common.vo.response.CursorPageBaseResp;
 import com.mtlaa.mtchat.utils.redis.RedisUtils;
 import org.springframework.data.redis.core.ZSetOperations;
 

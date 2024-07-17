@@ -6,6 +6,11 @@ server:
 websocket:
   port: 8090
 
+# 开启okhttp连接池
+feign:
+  okhttp:
+    enabled: true
+
 spring:
   application:
     name: websocket-service

@@ -1,9 +1,9 @@
 package com.mtlaa.user.cache;
 
 
+import com.mtlaa.api.domain.user.entity.User;
 import com.mtlaa.mtchat.cache.AbstractRedisStringCache;
 import com.mtlaa.mtchat.constant.RedisKey;
-import com.mtlaa.mtchat.domain.user.entity.User;
 import com.mtlaa.user.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package com.mtlaa.user.service;
 
 
-import com.mtlaa.mtchat.domain.user.enums.RoleEnum;
+import com.mtlaa.api.domain.user.enums.RoleEnum;
 
 /**
  * <p>

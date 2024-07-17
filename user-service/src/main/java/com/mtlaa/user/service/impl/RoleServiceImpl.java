@@ -1,6 +1,6 @@
 package com.mtlaa.user.service.impl;
 
-import com.mtlaa.mtchat.domain.user.enums.RoleEnum;
+import com.mtlaa.api.domain.user.enums.RoleEnum;
 import com.mtlaa.user.cache.UserCache;
 import com.mtlaa.user.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;

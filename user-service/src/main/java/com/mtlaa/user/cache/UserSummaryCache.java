@@ -1,11 +1,12 @@
 package com.mtlaa.user.cache;
 
 
+import com.mtlaa.api.domain.user.dto.SummeryInfoDTO;
+import com.mtlaa.api.domain.user.entity.*;
+import com.mtlaa.api.domain.user.enums.ItemTypeEnum;
 import com.mtlaa.mtchat.cache.AbstractRedisStringCache;
 import com.mtlaa.mtchat.constant.RedisKey;
-import com.mtlaa.mtchat.domain.user.dto.SummeryInfoDTO;
-import com.mtlaa.mtchat.domain.user.entity.*;
-import com.mtlaa.mtchat.domain.user.enums.ItemTypeEnum;
+
 import com.mtlaa.user.dao.UserBackpackDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

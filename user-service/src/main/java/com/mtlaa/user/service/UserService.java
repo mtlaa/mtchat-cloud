@@ -1,14 +1,15 @@
 package com.mtlaa.user.service;
 
 
-import com.mtlaa.mtchat.domain.user.dto.ItemInfoDTO;
-import com.mtlaa.mtchat.domain.user.dto.SummeryInfoDTO;
-import com.mtlaa.mtchat.domain.user.entity.User;
-import com.mtlaa.mtchat.domain.user.vo.request.ItemInfoReq;
-import com.mtlaa.mtchat.domain.user.vo.request.ModifyNameRequest;
-import com.mtlaa.mtchat.domain.user.vo.request.SummeryInfoReq;
-import com.mtlaa.mtchat.domain.user.vo.response.BadgeResponse;
-import com.mtlaa.mtchat.domain.user.vo.response.UserInfoResponse;
+
+import com.mtlaa.api.domain.user.dto.ItemInfoDTO;
+import com.mtlaa.api.domain.user.dto.SummeryInfoDTO;
+import com.mtlaa.api.domain.user.entity.User;
+import com.mtlaa.api.domain.user.vo.request.ItemInfoReq;
+import com.mtlaa.api.domain.user.vo.request.ModifyNameRequest;
+import com.mtlaa.api.domain.user.vo.request.SummeryInfoReq;
+import com.mtlaa.api.domain.user.vo.response.BadgeResponse;
+import com.mtlaa.api.domain.user.vo.response.UserInfoResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
