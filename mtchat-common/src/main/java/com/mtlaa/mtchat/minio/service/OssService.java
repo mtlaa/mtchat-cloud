@@ -1,7 +1,7 @@
 package com.mtlaa.mtchat.minio.service;
 
 
-import com.mtlaa.mtchat.domain.user.vo.request.UploadUrlReq;
+import com.mtlaa.api.domain.user.vo.request.UploadUrlReq;
 import com.mtlaa.mtchat.minio.domain.OssResp;
 
 /**

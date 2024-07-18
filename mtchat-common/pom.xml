@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--    项目api和实体类    -->
         <dependency>
             <groupId>com.mtlaa</groupId>
@@ -60,10 +65,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!--   Nacos     -->
+        <!-- MyBatis-->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
 

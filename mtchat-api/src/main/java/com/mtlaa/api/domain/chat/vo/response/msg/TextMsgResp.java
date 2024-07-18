@@ -2,7 +2,7 @@ package com.mtlaa.api.domain.chat.vo.response.msg;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mtlaa.mtchat.domain.urldiscover.UrlInfo;
+import com.mtlaa.api.domain.urldiscover.UrlInfo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

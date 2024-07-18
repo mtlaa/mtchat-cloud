@@ -4,13 +4,14 @@ import cn.hutool.core.util.StrUtil;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.mtlaa.api.client.UserClient;
-import com.mtlaa.api.client.WebsocketPushClient;
 import com.mtlaa.api.domain.user.entity.User;
 import com.mtlaa.login.service.LoginService;
 import com.mtlaa.login.service.WxMsgService;
 
 
 import com.mtlaa.login.util.WxTextBuilder;
+import com.mtlaa.mtchat.adapter.WebSocketAdapter;
+import com.mtlaa.mychat.transaction.service.MQProducer;
 import com.mtlaa.mychat.transaction.service.PushService;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
@@ -19,7 +20,6 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.net.URLEncoder;
@@ -52,8 +52,6 @@ public class WxMsgServiceImpl implements WxMsgService {
     @Autowired
     private LoginService loginService;
     @Autowired
-    private WebsocketPushClient websocketPushClient;
-    @Autowired
     private PushService pushService;
     /**
      * 用户在扫描微信二维码后，微信会发送用户的信息以及登录码，调用到这里
@@ -85,7 +83,8 @@ public class WxMsgServiceImpl implements WxMsgService {
         WAIT_AUTHORIZE_MAP.asMap().put(openId, code);
 
         // 扫码成功，发送给前端正在等待授权的消息
-        websocketPushClient.sendWaitAuthorizeMsg(code);
+        // TODO code改为字符串类型，这样保证各服务唯一
+        pushService.sendPushNotify(WebSocketAdapter.build(code.toString()));
 
         // 授权  构造微信授权登录的url
         String callbackUrl = URLEncoder.encode(callback + "/wx/portal/public/callback");
@@ -132,8 +131,9 @@ public class WxMsgServiceImpl implements WxMsgService {
      */
     private void loginSuccess(Integer code, User user){
         String token = loginService.login(user.getId());
-        // TODO 发送消息到消息队列，由websocket服务消费，根据全局唯一的code找到channel
-        pushService.sendPushMsg();
-        websocketPushClient.loginSuccess(code, user, token);
+        // 发送消息到消息队列，由websocket服务消费，根据全局唯一的code找到channel
+        // TODO 查询权限
+        // TODO code改为字符串
+        pushService.sendPushNotify(WebSocketAdapter.build(user, token, true, code.toString()));
     }
 }

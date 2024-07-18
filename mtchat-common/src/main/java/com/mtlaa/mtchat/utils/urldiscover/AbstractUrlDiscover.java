@@ -4,7 +4,7 @@ package com.mtlaa.mtchat.utils.urldiscover;
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 
-import com.mtlaa.mtchat.domain.urldiscover.UrlInfo;
+import com.mtlaa.api.domain.urldiscover.UrlInfo;
 import com.mtlaa.mtchat.utils.FutureUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;

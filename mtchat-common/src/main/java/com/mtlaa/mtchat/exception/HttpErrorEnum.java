@@ -1,7 +1,7 @@
 package com.mtlaa.mtchat.exception;
 
 import cn.hutool.http.ContentType;
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
 import com.mtlaa.mtchat.utils.redis.JsonUtils;
 import lombok.AllArgsConstructor;
 import org.apache.commons.io.Charsets;

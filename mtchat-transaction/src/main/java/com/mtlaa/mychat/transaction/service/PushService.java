@@ -46,4 +46,25 @@ public class PushService {
     public void sendPushMsg(WSBaseResp<?> msg) {
         mqProducer.sendMsg(MQConstant.PUSH_TOPIC, new PushMessageDTO(msg));
     }
+
+    public void sendPushNotify(WSBaseResp<?> notify, List<Long> uidList) {
+        mqProducer.sendMsg(MQConstant.NOTIFY_TOPIC, new PushMessageDTO(uidList, notify));
+    }
+
+    /**
+     * 推送消息到 MQ，消息内带有推送的目标uid
+     * @param notify 要推送的消息体
+     * @param uid 目标uid
+     */
+    public void sendPushNotify(WSBaseResp<?> notify, Long uid) {
+        mqProducer.sendMsg(MQConstant.NOTIFY_TOPIC, new PushMessageDTO(uid, notify));
+    }
+
+    /**
+     * 推送消息到 MQ，该消息要推送给所有在线用户
+     * @param notify 要推送的消息体
+     */
+    public void sendPushNotify(WSBaseResp<?> notify) {
+        mqProducer.sendMsg(MQConstant.NOTIFY_TOPIC, new PushMessageDTO(notify));
+    }
 }

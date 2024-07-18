@@ -15,5 +15,5 @@ public interface LoginClient {
                                @RequestParam("expireSeconds") Integer expireSeconds);
 
     @GetMapping("/getValidUid")
-    Long getValidUid(@RequestParam("token") String token)
+    Long getValidUid(@RequestParam("token") String token);
 }

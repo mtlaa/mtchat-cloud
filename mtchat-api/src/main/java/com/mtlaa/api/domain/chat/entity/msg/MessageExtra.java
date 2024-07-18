@@ -3,7 +3,7 @@ package com.mtlaa.api.domain.chat.entity.msg;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mtlaa.mtchat.domain.urldiscover.UrlInfo;
+import com.mtlaa.api.domain.urldiscover.UrlInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

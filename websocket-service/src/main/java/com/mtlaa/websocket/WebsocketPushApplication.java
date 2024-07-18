@@ -2,12 +2,14 @@ package com.mtlaa.websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.util.Arrays;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 @ComponentScan(value = {"com.mtlaa.mychat.transaction", "com.mtlaa.websocket"})
 @EnableFeignClients(basePackages = "com.mtlaa.api.client")
 public class WebsocketPushApplication {

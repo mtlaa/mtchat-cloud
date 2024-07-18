@@ -1,6 +1,6 @@
 package com.mtlaa.api.domain.chat.vo.response.wsMsg;
 
-import com.mtlaa.mtchat.domain.websocket.enums.WebSocketResponseTypeEnum;
+import com.mtlaa.api.domain.websocket.enums.WebSocketResponseTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

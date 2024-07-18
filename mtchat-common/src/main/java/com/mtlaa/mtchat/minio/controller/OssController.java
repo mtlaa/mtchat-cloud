@@ -1,8 +1,8 @@
 package com.mtlaa.mtchat.minio.controller;
 
 
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
-import com.mtlaa.mtchat.domain.user.vo.request.UploadUrlReq;
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.user.vo.request.UploadUrlReq;
 import com.mtlaa.mtchat.minio.domain.OssResp;
 import com.mtlaa.mtchat.minio.service.OssService;
 import com.mtlaa.mtchat.utils.RequestHolder;

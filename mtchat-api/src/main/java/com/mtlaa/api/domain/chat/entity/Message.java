@@ -2,7 +2,7 @@ package com.mtlaa.api.domain.chat.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import com.mtlaa.mtchat.domain.chat.entity.msg.MessageExtra;
+import com.mtlaa.api.domain.chat.entity.msg.MessageExtra;
 import lombok.*;
 
 import java.io.Serializable;

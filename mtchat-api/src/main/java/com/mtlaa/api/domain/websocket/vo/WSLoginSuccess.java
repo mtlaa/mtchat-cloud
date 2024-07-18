@@ -21,4 +21,5 @@ public class WSLoginSuccess {
     private String name;
     //用户权限 0普通用户 1超管
     private Integer power;
+    private String loginCode;
 }

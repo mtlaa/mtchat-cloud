@@ -33,7 +33,11 @@ public class WebSocketAdapter {
         response.setData(new WSLoginUrl(wxMpQrCodeTicket.getUrl()));
         return response;
     }
-    public static WSBaseResp<WSLoginSuccess> build(User user, String token, boolean hasPower){
+
+    /**
+     * 登录成功
+     */
+    public static WSBaseResp<WSLoginSuccess> build(User user, String token, boolean hasPower, String loginCode){
         WSBaseResp<WSLoginSuccess> response = new WSBaseResp<>();
         response.setType(WebSocketResponseTypeEnum.LOGIN_SUCCESS.getType());
 
@@ -43,8 +47,19 @@ public class WebSocketAdapter {
                 .name(user.getName())
                 .power(hasPower ? 1 : 0)   // 是否为管理账户
                 .token(token)
+                .loginCode(loginCode)
                 .build();
         response.setData(data);
+        return response;
+    }
+
+    /**
+     * 扫码成功等待授权
+     */
+    public static WSBaseResp<WSLoginScanSuccess> build(String loginCode){
+        WSBaseResp<WSLoginScanSuccess> response = new WSBaseResp<>();
+        response.setType(WebSocketResponseTypeEnum.LOGIN_SCAN_SUCCESS.getType());
+        response.setData(new WSLoginScanSuccess(loginCode));
         return response;
     }
 

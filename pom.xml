@@ -25,6 +25,7 @@
         <module>chat-service</module>
         <module>room-service</module>
         <module>mtchat-api</module>
+        <module>mtchat-gateway</module>
     </modules>
 
     <properties>
@@ -161,9 +162,17 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--   Nacos     -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!--用于手动注册服务-->
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+            <version>0.2.1</version>
         </dependency>
 
         <dependency>
@@ -184,11 +193,6 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>1.6.2</version>
-        </dependency>
-        <!-- MyBatis-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
         <dependency>

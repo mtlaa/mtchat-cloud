@@ -1,8 +1,8 @@
 package com.mtlaa.mtchat.minio.service.impl;
 
 
-import com.mtlaa.mtchat.domain.user.enums.OssSceneEnum;
-import com.mtlaa.mtchat.domain.user.vo.request.UploadUrlReq;
+import com.mtlaa.api.domain.user.enums.OssSceneEnum;
+import com.mtlaa.api.domain.user.vo.request.UploadUrlReq;
 import com.mtlaa.mtchat.exception.BusinessException;
 import com.mtlaa.mtchat.minio.MinIOTemplate;
 import com.mtlaa.mtchat.minio.service.OssService;

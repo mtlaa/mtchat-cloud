@@ -3,9 +3,9 @@ package com.mtlaa.websocket.handler;
 
 import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
-import com.mtlaa.mtchat.domain.websocket.dto.WebSocketRequest;
-import com.mtlaa.mtchat.domain.websocket.enums.WebSocketRequestTypeEnum;
+import com.mtlaa.api.domain.websocket.dto.WebSocketRequest;
 
+import com.mtlaa.api.domain.websocket.enums.WebSocketRequestTypeEnum;
 import com.mtlaa.websocket.service.WebSocketService;
 import com.mtlaa.websocket.utils.NettyUtil;
 import io.netty.channel.ChannelHandler;

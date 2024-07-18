@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    nacos:
+      server-addr: 47.115.77.12:8848
+
+    gateway:
+      routes:
+        - id: websocket
+          uri: lb:ws://websocket
+          predicates:
+            - Path=/websocket/**
+          filters:
+            - StripPrefix=1
+        # 微信扫码登录，微信后台请求服务进行认证、以及推送消息（扫码事件）
+        - id: wx
+          uri: lb://login-service
+          predicates:
+            - Path=/wx/portal/**
+
+        -
+
+

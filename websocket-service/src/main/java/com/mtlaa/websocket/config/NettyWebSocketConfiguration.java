@@ -1,6 +1,13 @@
 package com.mtlaa.websocket.config;
 
 
+import com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration;
+import com.alibaba.cloud.nacos.registry.NacosServiceRegistry;
+import com.alibaba.nacos.api.annotation.NacosInjected;
+import com.alibaba.nacos.api.exception.NacosException;
+import com.alibaba.nacos.api.naming.NamingFactory;
+import com.alibaba.nacos.api.naming.NamingService;
+import com.alibaba.nacos.api.naming.pojo.Instance;
 import com.mtlaa.websocket.handler.NettyWebSocketServerHandler;
 import com.mtlaa.websocket.handler.WebSocketHeaderHandler;
 import io.netty.bootstrap.ServerBootstrap;
@@ -21,13 +28,19 @@ import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.NettyRuntime;
 import io.netty.util.concurrent.Future;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 
 @Slf4j
@@ -35,6 +48,9 @@ import javax.annotation.PreDestroy;
 public class NettyWebSocketConfiguration {
     @Value("${websocket.port}")
     public int WEB_SOCKET_PORT = 8090;
+    @Value("${spring.cloud.nacos.server-addr}")
+    public String nacosAddr;
+
     // 自定义处理业务逻辑的类
     public static final NettyWebSocketServerHandler NETTY_WEB_SOCKET_SERVER_HANDLER = new NettyWebSocketServerHandler();
     // 创建线程池执行器
@@ -42,12 +58,31 @@ public class NettyWebSocketConfiguration {
     private final EventLoopGroup workerGroup = new NioEventLoopGroup(NettyRuntime.availableProcessors());
 
     /**
-     * 启动 ws server
+     * 启动 ws server, 手动把websocket注册到nacos
      */
     @PostConstruct
-    public void start() throws InterruptedException {
-        log.info("启动netty处理websocket连接...");
+    public void start() throws InterruptedException, NacosException, UnknownHostException {
+        log.info("启动netty处理websocket连接...{}", InetAddress.getLocalHost().getHostAddress());
+        registerToNacos();
         run();
+    }
+
+    /**
+     * 把 netty 服务器（websocket）注册到 Nacos
+     */
+    private void registerToNacos() throws NacosException, UnknownHostException {
+        log.info("注册netty到nacos...");
+        Properties properties = new Properties();
+        properties.put("serverAddr", nacosAddr);
+        NamingService namingService = NamingFactory.createNamingService(properties);
+        Instance instance = new Instance();
+        instance.setIp(InetAddress.getLocalHost().getHostAddress());
+        instance.setPort(WEB_SOCKET_PORT);
+        instance.setServiceName("websocket");
+        Map<String, String> map = new HashMap<>();
+        map.put("preserved.register.source", "SPRING_CLOUD");
+        instance.setMetadata(map);
+        namingService.registerInstance("websocket", instance);
     }
 
     /**

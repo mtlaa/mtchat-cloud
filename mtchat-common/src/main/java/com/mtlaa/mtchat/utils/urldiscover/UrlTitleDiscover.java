@@ -1,6 +1,6 @@
 package com.mtlaa.mtchat.utils.urldiscover;
 
-import com.mtlaa.mtchat.domain.urldiscover.UrlInfo;
+import com.mtlaa.api.domain.urldiscover.UrlInfo;
 import org.jsoup.nodes.Document;
 
 import javax.annotation.Nullable;

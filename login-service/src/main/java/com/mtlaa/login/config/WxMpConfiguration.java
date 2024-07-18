@@ -2,6 +2,7 @@ package com.mtlaa.login.config;
 
 
 
+import com.mtlaa.login.config.properties.WxMpProperties;
 import com.mtlaa.login.service.handler.LogHandler;
 import com.mtlaa.login.service.handler.MsgHandler;
 import com.mtlaa.login.service.handler.ScanHandler;

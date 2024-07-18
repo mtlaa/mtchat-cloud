@@ -1,6 +1,6 @@
 package com.mtlaa.mtchat.exception;
 
-import com.mtlaa.mtchat.domain.common.vo.response.ApiResult;
+import com.mtlaa.api.domain.common.vo.response.ApiResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

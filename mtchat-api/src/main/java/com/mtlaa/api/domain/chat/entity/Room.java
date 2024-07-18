@@ -2,8 +2,9 @@ package com.mtlaa.api.domain.chat.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mtlaa.mtchat.domain.chat.enums.HotFlagEnum;
-import com.mtlaa.mtchat.domain.chat.enums.RoomTypeEnum;
+
+import com.mtlaa.api.domain.chat.enums.HotFlagEnum;
+import com.mtlaa.api.domain.chat.enums.RoomTypeEnum;
 import lombok.*;
 
 import java.io.Serializable;

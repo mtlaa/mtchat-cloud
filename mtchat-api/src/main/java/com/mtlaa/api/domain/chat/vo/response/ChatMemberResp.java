@@ -1,6 +1,5 @@
 package com.mtlaa.api.domain.chat.vo.response;
 
-import com.mtlaa.mtchat.domain.user.enums.UserActiveStatusEnum;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package com.mtlaa.api.domain.websocket.vo;
 
-import com.mtlaa.mtchat.domain.chat.vo.response.ChatMessageResp;
+import com.mtlaa.api.domain.chat.vo.response.ChatMessageResp;
 import lombok.Data;
 
 /**

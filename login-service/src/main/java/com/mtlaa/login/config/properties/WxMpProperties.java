@@ -1,4 +1,4 @@
-package com.mtlaa.login.config;
+package com.mtlaa.login.config.properties;
 
 import cn.hutool.json.JSONUtil;
 import lombok.Data;

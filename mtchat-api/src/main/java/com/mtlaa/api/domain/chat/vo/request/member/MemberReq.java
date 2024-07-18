@@ -1,7 +1,7 @@
 package com.mtlaa.api.domain.chat.vo.request.member;
 
 
-import com.mtlaa.mtchat.domain.common.vo.request.CursorPageBaseReq;
+import com.mtlaa.api.domain.common.vo.request.CursorPageBaseReq;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,7 +1,7 @@
 package com.mtlaa.api.domain.websocket.vo;
 
 
-import com.mtlaa.mtchat.domain.chat.dto.ChatMsgRecallDTO;
+import com.mtlaa.api.domain.chat.dto.ChatMsgRecallDTO;
 import lombok.Data;
 
 /**

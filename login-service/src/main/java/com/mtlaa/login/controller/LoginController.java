@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Create 2024/7/4 20:19
+ * for inner
  */
 @RestController
-@RequestMapping("/login")
+@RequestMapping("")
 public class LoginController {
     @Autowired
     private WxMpService wxMpService;
